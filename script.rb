@@ -1,8 +1,8 @@
 #the script
-require_relative "../cards/deck"
-require_relative "../cards/player"
-require_relative "../cards/dealer"
-require_relative "../cards/game"
+require_relative "../Projects/deck"
+require_relative "../Projects/player"
+require_relative "../Projects/dealer"
+require_relative "../Projects/game"
 
 
 current_game = Game.new(1)
