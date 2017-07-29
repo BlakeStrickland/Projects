@@ -34,8 +34,8 @@ p dealer.has_straight_flush?(players_hand_to_play)
 p dealer.has_flush?(players_hand_to_play)
 
 #Dealer final_hand
-p dealer.has_straight_flush?(dealers_hand_to_play)
-p dealer.has_flush?(dealers_hand_to_play)
+# p dealer.has_straight_flush?(dealers_hand_to_play)
+# p dealer.has_flush?(dealers_hand_to_play)
 
 
 
