@@ -21,8 +21,8 @@ deck = hand_and_deck[1]
 
 p "player.hand"
 p player.hand
-p "dealer.hand"
-p dealer.hand
+# p "dealer.hand"
+# p dealer.hand
 
 players_hand_to_play = dealer.ask_for_cards(player.hand)
 dealers_hand_to_play = dealer.hand
