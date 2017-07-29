@@ -38,7 +38,9 @@ p player.money
 if player_sf_array[0] == true
   p "Wow a #{player_sf_array[1]} card straight flush"
   player.money += 100
-elsif player_flush_array[0] == true
+end
+
+if player_flush_array[0] == true
   p "Nice! a #{player_flush_array[1]} card flush"
   player.money += 30
 else
