@@ -19,23 +19,42 @@ hand_and_deck = dealer.deal_cards(dealer, deck)
 dealer.hand = hand_and_deck[0]
 deck = hand_and_deck[1]
 
-p "player.hand"
 p player.hand
 # p "dealer.hand"
 # p dealer.hand
 
-players_hand_to_play = dealer.ask_for_cards(player.hand)
+players_hand_to_play = dealer.ask_to_play(player.hand)
 dealers_hand_to_play = dealer.hand
 p players_hand_to_play
-p dealers_hand_to_play
+# p dealers_hand_to_play
 
-#Player final_hand
-p dealer.has_straight_flush?(players_hand_to_play)
-p dealer.has_flush?(players_hand_to_play)
+player_sf_array = dealer.has_straight_flush?(players_hand_to_play)
+player_flush_array = dealer.has_flush?(players_hand_to_play)
+p player.money
+
+
+
+
+if player_sf_array[0] == true
+  p "Wow a #{player_sf_array[1]} card straight flush"
+  player.money += 100
+elsif player_flush_array[0] == true
+  p "Nice! a #{player_flush_array[1]} card flush"
+  player.money += 30
+else
+  p "Better luck next time"
+end
+
+p player.money
+
+
 
 #Dealer final_hand
-# p dealer.has_straight_flush?(dealers_hand_to_play)
-# p dealer.has_flush?(dealers_hand_to_play)
+dealer_sf_array = dealer.has_straight_flush?(dealers_hand_to_play)
+dealer_flush_array = dealer.has_flush?(dealers_hand_to_play)
+
+# if dealer_flush_array[0] == false &&
+
 
 
 

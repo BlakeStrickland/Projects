@@ -76,14 +76,29 @@ class Dealer
     end
   end
 
-  def ask_for_cards(your_cards)
-    puts "Which cards would you like to play?"
-    puts "Ex) 1347 or 1 4 6 "
-    cards_played = gets.chomp
+  def ask_to_play(your_cards)
+    valid_play = false
+    until valid_play == true
+      puts "Which cards would you like to play? or type 'fold'"
+      puts "Ex) 1347 or 1 4 6 "
+      players_decision = gets.chomp
 
-    cards_played = cards_played.gsub(/\s+/, "")
+      if (/^(?<num>\d+)$/ =~ players_decision) == nil
+        valid_play = false
+      else
+        valid_play = true
+      end
+    end
+
     cards_integer_array = []
-    cards_played.each_char { |chr|  cards_integer_array << chr.to_i}
+
+    if players_decision.downcase! == "fold"
+      [false]
+    else
+      players_decision = players_decision.gsub(/\s+/, "")
+      players_decision.each_char { |chr|  cards_integer_array << chr.to_i}
+    end
+
     create_final_hand(cards_integer_array, your_cards)
   end
 
@@ -167,7 +182,7 @@ class Dealer
     straight_flush_result = [false, 0]
 
     if (has_flush?(hand)[0] == true) && (has_straight?(hand)[0] == true)
-      straight_flush_result << has_straight(hand)[1]
+      straight_flush_result << has_straight?(hand)[1]
     end
     # straight_flush_result.flatten
     straight_flush_result
