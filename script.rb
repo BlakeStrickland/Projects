@@ -55,6 +55,12 @@ p player.money
 dealer_sf_array = dealer.has_straight_flush?(dealers_hand_to_play)
 dealer_flush_array = dealer.has_flush?(dealers_hand_to_play)
 
+
+#TODO does player beat dealer
+
+
+
+Mi  
 # if dealer_flush_array[0] == false &&
 
 
